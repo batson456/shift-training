@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="span12">
+    <div id="content">
+      <h1>HTML Layout</h1>
+
+      <hr>
+
+      <div>
+        <h3>Paragraphs</h3>
+        <p>In content heavy webpages or applications, the <code>&lt;p&gt;</code>, or paragraph tag is probably one of the most widely used. It is simply a wrapper for text. If you examine the code of this page, you will notice quite a few <code>&lt;p&gt;</code> tags. HTML documents do not act quite like standard documents. White space is, other than spaces, almost entirely ignored. Hitting the enter key while writing your markup will have no real impact on the page when it is actually rendered.</p>
+        
+        <pre>
+line1          
+line2</pre>
+
+<div class="label">Output:</div><br/>
+        line1
+        line2
+        <br/>
+        <br/>
+        <p>The proper way of doing this would be</p>
+<pre>
+&lt;p&gt;line1&lt;/p&gt;
+&lt;p&gt;line2&lt;/p&gt;
+</pre>
+
+<span class="label">Output:</span><br/>
+<p>line1</p>
+<p>line2</p>
+        <p>Each <code>&lt;p&gt;</code> tag you use will wrap all text included within in a paragraph. To start a new paragraph, simply include another set of <code>&lt;p&gt;</code> tags. Although a paragraph tag is not essential, and there are alternative ways of separating content into paragraphs, it is definitely the best tool for the job. </p>
+        <p>Another incredibly useful tool to help you in setting up your layout is the <code>&lt;br&gt;</code> tag. This is basically the equivalent of hitting the enter key on your keyboard, and will just start a new line, where it is included. If you wanted to output the example above, without using two separate paragraph tags, you could simple insert a <code>&lt;br&gt;</code> tag in between them. Remember that white space is ignored, so the two examples below will provide equivalent output</p>
+<pre>
+line1
+&lt;br&gt;
+line2
+</pre>
+
+<pre>
+line1&lt;br&gt;line2
+</pre>
+
+<span class="label">Output:</span><br/>
+line1<br/>line2
+        
+<hr/>
+        <h3>Headers</h3>
+        <p>Headers are used just as you would expect. They are a quick and easy way to make a set of text stand out from the rest. A heading tag is creating by an <code>&lt;h</code> followed by a number. THe smaller the number, the larger the heading tag. <code>&lt;h1&gt;</code>,<code>&lt;h2&gt;</code>,<code>&lt;h3&gt;</code>,<code>&lt;h4&gt;</code>.....</p>
+        <span class="label">Output:</span>
+        <h1>H1</h1><h2>H2</h2><h3>H3</h3><h4>H4</h4>
+        
+
+        <hr>
+
+        <h3>Anchors / Links</h3>
+        <p>Anchors or links are the glue that holds websites together. A link is what allows you to send a user to another page within your website, on someone else's website, or even on the same page. Links can also be used by javascript to perform an action of some sort. An anchor tag is a little trickier than most of the tags we have worked with so far. <code>&lt;a href=""&gt;I am a link&lt;/a&gt;</code>. The key component here is the <code>href=""</code>. This is what tells the browser where to go when the user clicks on the link. Within the quotations, you can include either a link to an external website e.g. <span class="label label-success">http://www.google.com</span>, within your own website using a relative url <span class="label label-success">/home.html</span>, or to a specific point on a page <span class="label label-success">#home</span>. Lets go over a couple examples.</p>
+<pre>&lt;a href="http://www.google.com"&gt;click me&lt;/a&gt;</pre>
+        <span class="label">Output:</span><br/>
+        <a href="http://www.google.com">click me</a>
+        <br/><br/>
+<pre>&lt;a href=&quot;/&quot;&gt;click me&lt;/a&gt;</pre>
+<span class="label">Output:</span><br/>
+<a href="#">click me</a>
+
+        <p>In order to link within a page, you need to provide a destination to link to. This is done by putting another anchor somewhere on your page with a <code>name</code> attribute as follows <code>&lt;a name="destination"&gt;</code>. Then to link to this particular portion of the page, you would use <code>&lt;a href="#name"&gt;click me &lt;/a&gt;</code></p>
+
+        <hr>
+
+        <h3>Divs</h3>
+        <p>Now it is time to go into some specific tags. The single most important tag, which is also the most difficult to grasp, is the <code>&lt;div&gt;</code> tag. This tag is used as the primary building block for all modern day websites. Older websites used to use tables to provide structure, but the rigidity of tables makes them ill suited for the fluid nature of most <strong>Web 2.0</strong> websites. <code>&lt;div&gt;</code>'s will provide a majority of the structure for a webpage. Without further ado, lets dig into the <code>&lt;div&gt;</code></p>
+
+        <p>A <code>&lt;div&gt;</code> by default acts as a full width block. When used without content, it has no height unless specifically declared, and acts as a sort of wrapper for any content contained within it, expanding in height to fit all the content contained within. Let's see a div in action. </p>
+        <pre>
+&lt;div&gt;
+  I am a div
+&lt;/div&gt;</pre>
+        <span class="label">Output:</span><br/>
+        <div class="border">
+          I am a div
+        </div>
+        <br/>
+        <p>As you can see, the div stretched to the full width of the container area, while adding no special margins or padding to the information contained inside. Note that I added a border to the <code>&lt;div&gt;</code> so that you could see it clearly. By default, a <code>&lt;div&gt;</code> does not have a border. You will start to truly understand the power behind <code>&lt;div&gt;</code>'s when we start to div into the CSS, which is where we can start manipulatiing them to provide the structure for our page. Because <code>&lt;div&gt;</code> tags are full width by default, placing one in a line of text will usually have the side effect of breaking the text into a new line.</p>
+<pre>
+For example &lt;div&gt;this div&lt;/div&gt; will break the flow of the text.</pre>
+
+<span class="label">Output:</span><br/>
+For example <div>this div</div> will break the flow of the text.
+
+        <hr/>
+
+        <h3>Spans</h3>
+        <p>A <code>&lt;span&gt;</code> tag is one of the other more important building blocks used in most webpages, and acts as a counterpart to the <code>&lt;div&gt;</code>. The primary difference between a <code>&lt;div&gt;</code> and a <code>&lt;span&gt;</code> is that a span does not have any width to it, and acts an inline piece. A span can be included within a line of text without breaking the layout of the text. <code>&lt;span&gt;</code> tags are more frequently used to provide styling to specific elements in a line of text.</p>
+
+        <pre>
+For example &lt;span&gt;this span&lt;/span&gt; will not break the flow of the text.</pre>
+
+        <span class="label">Output:</span><br/>
+        For example <span>this span</span> will not break the flow of the text.
+
+        <hr/>
+        
+        <br/><br/><br/>
+        <a href="#/basics" class="btn btn-danger pull-left">BACK</a>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

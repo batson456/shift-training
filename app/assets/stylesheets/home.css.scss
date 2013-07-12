@@ -1,0 +1,50 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+  padding-top:20px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+#content{
+    padding:20px;
+    background:#fff;
+    -webkit-box-shadow: 0 0 2px 1px  #898989;
+    box-shadow: 0 0 2px 1px #898989; 
+}
+.border{
+    border:1px solid black;
+}
+.border-dashed{
+    border:1px dashed black;
+}
+.margin-20{
+    margin:20px;
+}
+.padding-5{
+    padding:5px;
+}

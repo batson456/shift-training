@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="span12">
+    <div id="content">
+      <h1>HTML Basics</h1>
+
+      <hr>
+
+      <div>
+        <h3>Basics</h3>
+        <p>
+          HTML or "HyperText Mark-up Language" is a markup language used by all browsers as the structural foundation of webpages. HTML documents are made up of hierarchal sets of tags, or elements. All tags are formed the same way, as code wrapped in angle brackets <code>&lt;code&gt;</code>, and in most cases, each tag will have an accompanying closing tag <code>&lt;/code&gt;</code>. It is an incredibly basic language, and once you master a few of the principle concepts, writing HTML can be incredibly simple.
+        </p>
+        <h5>Structure</h5>
+        <br/>
+        <p>Here is a basic format that you can use to get kickstarted making HTML pages, and it will provide us with a good starter for a better look into tags. Although this may look confusing at first, we will break it down into chunks in just a moment</p>
+<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Some Title&lt;/title&gt;
+    &lt;meta charset="utf-8" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    All other html inside here
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      <p>The first tag <code>&lt;!doctype html&gt;</code> is not always required, but it helps determine which type of HTML document your browser will be rendering, and there are different doctype delclarations which you can choose from which are beyond the scope of this lesson. You can find more about doctypes <a href="http://www.w3schools.com/tags/tag_doctype.asp">here</a>. The real meat of the page happens between the <code>&lt;html&gt;&lt;/html&gt;</code> tags. All HTML documents should be wrapped in these tags, and they act as the container for your webpage. </p>
+
+      <p>The <code>&lt;head&gt;</code> generally contains descriptive information about your webpage. Inside here you will generally include the <code>&lt;title&gt;</code> of your website, which will usually be displayed in the header of browser and as the title of the page in tab views. You can also include an stylesheet declarations in here, which we will go into greater detail later, as well as any javascript files you may have. The <code>&lt;meta&gt;</code> tags are used to provide greater detail to both the browser, and to search engine crawlers. There is a bunch of information you can include within <code>&lt;meta&gt;</code> tags and you can find more details <a href="http://www.w3schools.com/tags/tag_meta.asp">here</a>.</p>
+
+      <p>The <code>&lt;body&gt;</code> tag is the other key component to an html page, and should be included in all pages. Most of the magic happens between these tags, and you should include all content relative information within these tags. Most of the other tags you use should be included inside the body wrapper. None of these tags are absolutely necessary to load a page, but you will have a much easier time learning if you follow this structure. It can definitely save you some layout headaches further down the road.</p>
+      <br/>
+      <div class="alert alert-info">NOTE: It is usually best practice to include Javascript tags near or at the bottom of an html page within the body tags. Since most Javascript will not run until the page is fully loaded anyway, it can help speed up the load time of the view by putting these tags near the bottom of the document.</div>
+
+      </div>
+      <br/><br/><br/>
+      <a href="#/layout" class="btn btn-success pull-right">NEXT</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
