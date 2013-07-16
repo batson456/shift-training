@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="span12">
+    <div id="content">
+      <h1>Tables</h1>
+        
+      <hr>
+
+      <p>If you go back, not even that long ago, tables were the defacto web developer tool. There were one of the only tools that designers had to create structure on a webpage. However, just like flashing colorful gifs and scrolling marquees, they have outlived their usefulness. Now that is not to say that tables are not an important tool, because they still are, but just like all tools, it is important to know when and how to use them.</p>
+
+      <p><marquee behavior="alternate" direction="right"><img src="http://blogs.msdn.com/blogfiles/fasttrackreview/WindowsLiveWriter/SmartPointSolutionsFastTrackReview_110CA/clip_image008_2.jpg" alt="rainbow-gif" width="200px"><font color=#ff0000>D</font><font color=#f81306>o</font><font color=#f1270d>n</font><font color=#eb3a13>'</font><font color=#e44d1a>t</font> <font color=#d77127>l</font><font color=#d1822d>a</font><font color=#ca9334>u</font><font color=#c4a23a>g</font><font color=#bdb141>h</font><font color=#b7be47>,</font> <font color=#aad655>y</font><font color=#a3e05b>o</font><font color=#9ce962>u</font> <font color=#8ff66f>w</font><font color=#89fa75>o</font><font color=#82fd7c>u</font><font color=#7cfe82>l</font><font color=#75fe89>d</font> <font color=#68f996>h</font><font color=#62f59c>a</font><font color=#5befa3>v</font><font color=#55e7aa>e</font> <font color=#47d4b7>d</font><font color=#41c9bd>o</font><font color=#3abcc4>n</font><font color=#34afca>e</font> <font color=#2790d7>i</font><font color=#2080de>t</font> <font color=#135ceb>t</font><font color=#0d4af1>o</font><font color=#0637f8>o</font>!</marquee></p>
+      
+      <br/>
+      <h4>When not to use</h4>
+      <p>Tables are no longer used for page layouts. They are far too rigid, and do not provide much in the way of flexibility when it comes to CSS styling. If you feel the urge to start wrapping divs in <code>&lt;td&gt;</code> tags, just keep it bottled up. Trust me, it will be much easier to maintain later if your design changes, or if you need to add more content. Plus, would you rather type this?</p>
+
+<pre>&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Panel&lt;/td&gt;
+      &lt;td&gt;Right Panel&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+
+      or this?
+<pre>&lt;div&gt;Left Panel&lt;/div&gt;
+&lt;div&gt;Right Panel&lt;/div&gt;</pre>
+      <br/>
+      <h4>When to use</h4>
+      <p>Tables should be used for what they were designed for. Displaying data in a tabular format. If you have a set of data that you feel would be suited for a table, by all means, insert it in there. This is pretty much the only place where tables should be used in modern web design, especially when it comes to responsive design.</p>
+
+      <br/>
+      <h4>How to use</h4>
+      <p>Tables are very simple to setup, but should require at the very least a few basic elements. I will only go into best practice here, as the specifics of building tables can be found <a href="http://woodgears.ca/table/howto.html">here</a>. If you clicked that link, I am sorry, was just trying to have a little fun. Seriously though, <a href="http://www.w3schools.com/html/html_tables.asp">w3cschools</a> has some awesome information on tables if you want to dive into specifics. I just want to go into some of the best practices you can use when building tables.</p>
+
+      <p>Here is a basic table structure which I use for almost all of my tables. I always break out the structure into their components, so almost always use a header <code>&lt;thead&gt;</code> and a body <code>&lt;tbody&gt;</code>. Within the header you will use the <code>&lt;tr&gt;</code> tags, just like in the body, but within each row, you should use <code>&lt;th&gt;</code> tags, wherein the body you should use <code>&lt;td&gt;</code> tags. Following these conventions will make life a little easier when trying to style the table.</p>
+<pre>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Heading 1&lt;/th&gt;
+      &lt;th&gt;Heading 2&lt;/th&gt;
+      &lt;th&gt;Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Column 1&lt;/td&gt;
+      &lt;td&gt;Column 2&lt;/td&gt;
+      &lt;td&gt;Column 3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+      
+      <p>Just like everything else, there is no golden rule about how everything should be laid out all the time. Feel free to experiment and make your own best practices, HTML is quite forgiving, so placing a tag in an incorrect place usually won't do too much harm, and following a proper structure, although important, is not a necessity, and your pages will usually function just fine, even with a few mistakes.</p>
+    </div>
+  </div>
+</div>

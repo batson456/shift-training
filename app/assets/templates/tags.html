@@ -1,13 +1,13 @@
 <div class="row">
   <div class="span12">
     <div id="content">
-      <h1>HTML Layout</h1>
-
+      <h1>HTML Tags : Crash Course</h1>
+        
       <hr>
 
       <div>
         <h3>Paragraphs</h3>
-        <p>In content heavy webpages or applications, the <code>&lt;p&gt;</code>, or paragraph tag is probably one of the most widely used. It is simply a wrapper for text. If you examine the code of this page, you will notice quite a few <code>&lt;p&gt;</code> tags. HTML documents do not act quite like standard documents. White space is, other than spaces, almost entirely ignored. Hitting the enter key while writing your markup will have no real impact on the page when it is actually rendered.</p>
+        <p>In content heavy webpages the <code>&lt;p&gt;</code>, or paragraph tag is probably one of the most widely used. It is simply a wrapper for text. If you examine the code of this page, you will notice quite a few <code>&lt;p&gt;</code> tags. HTML documents do not act quite like standard documents. White space is, other than spaces, almost entirely ignored. Hitting the enter key while writing your markup will have no real impact on the page when it is actually rendered.</p>
         
         <pre>
 line1          
@@ -27,7 +27,8 @@ line2</pre>
 <span class="label">Output:</span><br/>
 <p>line1</p>
 <p>line2</p>
-        <p>Each <code>&lt;p&gt;</code> tag you use will wrap all text included within in a paragraph. To start a new paragraph, simply include another set of <code>&lt;p&gt;</code> tags. Although a paragraph tag is not essential, and there are alternative ways of separating content into paragraphs, it is definitely the best tool for the job. </p>
+        <p>Each <code>&lt;p&gt;</code> tag you use will wrap all text included within in a single paragraph. To start a new paragraph, simply include another set of <code>&lt;p&gt;</code> tags.</p>
+
         <p>Another incredibly useful tool to help you in setting up your layout is the <code>&lt;br&gt;</code> tag. This is basically the equivalent of hitting the enter key on your keyboard, and will just start a new line, where it is included. If you wanted to output the example above, without using two separate paragraph tags, you could simple insert a <code>&lt;br&gt;</code> tag in between them. Remember that white space is ignored, so the two examples below will provide equivalent output</p>
 <pre>
 line1
@@ -66,7 +67,7 @@ line1<br/>line2
         <hr>
 
         <h3>Divs</h3>
-        <p>Now it is time to go into some specific tags. The single most important tag, which is also the most difficult to grasp, is the <code>&lt;div&gt;</code> tag. This tag is used as the primary building block for all modern day websites. Older websites used to use tables to provide structure, but the rigidity of tables makes them ill suited for the fluid nature of most <strong>Web 2.0</strong> websites. <code>&lt;div&gt;</code>'s will provide a majority of the structure for a webpage. Without further ado, lets dig into the <code>&lt;div&gt;</code></p>
+        <p>The single most important tag, which is also the most difficult to grasp, is the <code>&lt;div&gt;</code> tag. This tag is used as the primary building block for all modern day websites. Older websites used to use tables to provide structure, but the rigidity of tables makes them ill suited for the fluid nature of most <strong>Web 2.0</strong> websites. <code>&lt;div&gt;</code>'s will provide a majority of the structure for a webpage. Without further ado, lets dig into the <code>&lt;div&gt;</code></p>
 
         <p>A <code>&lt;div&gt;</code> by default acts as a full width block. When used without content, it has no height unless specifically declared, and acts as a sort of wrapper for any content contained within it, expanding in height to fit all the content contained within. Let's see a div in action. </p>
         <pre>
@@ -97,9 +98,61 @@ For example &lt;span&gt;this span&lt;/span&gt; will not break the flow of the te
         For example <span>this span</span> will not break the flow of the text.
 
         <hr/>
+
+        <h3>UL/OL</h3>
+        <p>Last but not least, we have the unordered list <code>&lt;ul&gt;</code> and ordered list<code>&lt;ol&gt;</code> tags. These are probably two of the other most used tags on a webpage. They are not limited to providing data in a list style format, as their name might otherwise signify. Use these tags whenever you want to display similar information in an ordered fashion. For instance, navigation menus, picture galleries, or even just content segments. They provide great structure for handling this information, and are very easy to style. Take this photo gallery for instance, created solely with unordered lists and CSS.</p>
+
+
+        <ul class="thumbnails">
+          <li>
+            <a href="#" class="thumbnail">
+              <img src="http://lorempixel.com/300/200" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="thumbnail">
+              <img src="http://lorempixel.com/300/200/abstract" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="thumbnail">
+              <img src="http://lorempixel.com/300/200/sports" />
+            </a>
+          </li>
+        </ul>
+
+        <p>The markup for this is quite simple, which is the beauty of it, although there is quite a bit going on in the CSS that may look a little scary.</p>
+<pre>&lt;ul class=&quot;thumbnails&quot;&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot; class=&quot;thumbnail&quot;&gt;
+          &lt;img src=&quot;http://lorempixel.com/300/200&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot; class=&quot;thumbnail&quot;&gt;
+          &lt;img src=&quot;http://lorempixel.com/300/200/abstract&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot; class=&quot;thumbnail&quot;&gt;
+          &lt;img src=&quot;http://lorempixel.com/300/200/sports&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
         
+        <hr>
+        <h3>More Information</h3>
+        <p>This just scratches the surface of what you can do with HTML, and there are quite a few more tags such as buttons, forms, horizontal rules, as well as attributes for each tag that you will want to become familiar with, but these have already been explained in much greater detail than I can provide here. Here are a few key links that provide an excellent knowledgebase for people just beginning with HTML, and ones that I personally used while learning.</p>
+        
+        <p><a href="http://www.w3schools.com">w3cschools.com</a></p>
+        <p><a href="http://www.tizag.com/htmlT/">tizag.com</a></p>
+        <p><a href="http://www.echoecho.com/html.htm">EchoEcho.com</a></p>
+
+        <p><a href="http://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189/ref=sr_1_1?ie=UTF8&qid=1373920354&sr=8-1&keywords=html">HTML and CSS: Design and Build Websites</a> is an absolutely amazing book for beginners, full color with tons of examples.</p>
+        <p><a href="http://www.amazon.com/Head-First-HTML-Elisabeth-Robson/dp/0596159900/ref=sr_1_10?ie=UTF8&qid=1373920624&sr=8-10&keywords=html">Head First HTML and CSS</a>. I have read through a couple Headfirst books, really good material, and for me personally, very helpful.</p>
         <br/><br/><br/>
         <a href="#/basics" class="btn btn-danger pull-left">BACK</a>
+        <a href="#/tables" class="btn btn-success pull-right">NEXT</a>
         <div class="clearfix"></div>
       </div>
     </div>
