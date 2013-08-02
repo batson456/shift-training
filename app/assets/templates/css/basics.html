@@ -1,0 +1,160 @@
+<div class="row">
+  <div class="span12">
+    <div id="content">
+      <h1>CSS Basics</h1>
+
+      <hr>
+
+      <article id="why-css">
+        <h3>What?</h3>
+        <p>CSS is short for Cascading Style Sheets. What CSS allows you to do is organize your style declarations into a hierarchal structure, separated from your view. This allows you to reuse styles, and to change groups of styles without having to dig through your document to find all elements you want to change. CSS and HTML go hand in hand, as CSS brings out the true power of HTML. Lets expand upon our <code>&lt;div&gt;</code> knowledge a little with a simple example of CSS styling, and I think you will begin to see the power. Let's start with a simple unstyled div. Remember, the border is just so you can see it, divs do not normally have borders.</p>
+        <div class="border">I am a div</div>
+
+        <p>Kind of boring looking. In order to change this up, we need to add a <code>class</code> or <code>id</code> attribute to the <code>&lt;div&gt;</code>. These will both help us identify the element within our code, and to apply reusable styles and Javascript hooks to the element. We will go into a little more detail on <code>id</code> and <code>class</code> in a few. Let's apply the <code>myDiv</code> class to this element.</p>
+
+<pre>&lt;div class=&quot;myDiv&quot;&gt;
+I am a div  
+&lt;/div&gt;</pre>
+
+        <p>Adding this class to the <code>&lt;div&gt;</code> won't do anything by itself. It will still look exactly the same, but we now have a way of targeting it within our stylesheet. We can now apply some styles to this element. Let's say we want it to have a thick blue border, have a pink background, red text, and be smaller and centered on the page, with rounded borders and a shadow. Sounds fancy huh?</p>
+
+        <div class="myDiv">I am a div</div>
+        
+        <p>Now look at how we changed that boring old <code>&lt;div&gt;</code> into something truly beautiful. We could very easily apply this style to multiple elements by simple adding the <code>myDiv</code> class to other elements on the page, and they will all inherit that same look.</p>
+      </article>
+
+      <article id="how-css">
+        <h3>How?</h3>
+        <p>Technically speaking, CSS should go into a separate file from the page, denoted by the <code>.css</code> extension. In order to include this file in your page, you simply declare it within a <code>&lt;link&gt;</code> tag in your header. You can also include <code>&lt;style&gt;</code> tags within your page, but this is not as preferred as including separate files.</p>
+        
+        <pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</pre>
+
+        <p>The beauty behind stylesheets is that styles are interpreted from the top of the file to the bottom, or in the order in which they were declared. This allows you to override your styles for certain pages. Let's say you have a site, with a handful of different pages. You want to have one general style across all pages, but some pages may be a little different and you want to override one aspect of a particular style declaration. In order to acheive this, you would create one <code>site.css</code> and a <code>page.css</code> for each page that you need to provide overrides for. You could then declare them as follows on each page.</p>
+
+        <pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;site.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;page.css&quot;&gt;</pre>
+
+        <p>If you had a <code>myDiv</code> style in the <code>site.css</code>, and a <code>myDiv</code> style in <code>page.css</code>, any elements with the <code>myDiv</code> hook on your page will inherit the styling from <code>page.css</code> as opposed to <code>site.css</code>. Because the <code>site.css</code> file was declared first, any identical style declarations within the <code>page.css</code> file will override those of the <code>site.css</code>. This is where the cascading part of cascading style sheets comes from. You could also use this structure to keep your CSS more modular. You could have a <code>widgets.css</code>, <code>tables.css</code>, <code>buttons.css</code> which you could then reuse in your other projects.</p>
+      
+      </article>
+
+      <article id="syntax">
+        <h3>Syntax</h3>
+        <p>Other than learning all of the different types of style declarations you can use, the syntax is actually quite simple.</p>
+<pre>[selector]{
+  style1 : declaration;
+  style2 : declaration;
+}</pre>
+
+      <p>For example, the div that we styled above was done in the following way.</p>
+<pre>.myDiv{
+    border:6px solid blue;
+    background:pink;
+    width:20%;
+    margin:0 auto 20px;
+    padding:20px;
+    text-align:center;
+    color:red;
+    border-radius:20px;
+    box-shadow:0 0 10px #000;
+}</pre>
+      </article>
+
+      <article id="selectors">
+        <h3>Selectors</h3>
+        <p>In order to use CSS styles, you must have a way of targeting elements on your HTML page. This is where CSS selectors come in. You can target one specific element, groups of elements, or all elements of a particular tag type.</p>
+        <h5>Id</h5>
+        <p>The <code>id</code> attribute is used to target one specific element on a page. There should never be more than one element with the same id on a page. The <code>#</code> symbol will then allow us to target that specific element. If you have a <code>&lt;div id="myDiv"&gt;</code> element, you would target it in your stylesheet as <code>#myDiv</code>. Use <code>id</code> in your stylesheet sparingly, as specific styling is rare. A majority of the time, you should use the <code>class</code> attribute instead.</p>
+
+        <h5>Class</h5>
+        <p>The <code>class</code> attribute is used to target multiple elements that should inherit the same styling. You can have as many elements with the same class on the same page, but be warned that they will all inherit the same styles if any declarations have been made. If you have a <code>&lt;div class="myDiv"&gt;</code> element, you would target it in your stylesheet as <code>.myDiv</code>. By applying the <code>myDiv</code> class to other elements, they will all inherit the same styling.</p>
+
+        <h5>Element</h5>
+        <p>What if you want to make all text inputs look different? You could add a class to all input tags, but wouldn't it be easier just to target all input tags within your stylesheet? Well, you are in luck, because this is definitely something that is possible! Within your stylesheet, you could add</p>
+<pre>input{
+  style1 : declaration;
+  style2 : declaration;
+}</pre>
+        <p>This can be as high level as applying styles to an <code>&lt;html&gt;</code> tag or as low level as applying styles to all <code>&lt;p&gt;</code> tags on a page. You can use all of these style selectors together to provide a fine level of style control. You could have a <code>&lt;div id="myDiv" class="myDivs"&gt;</code> and then this within your stylesheet.</p>
+<pre>div{
+  margin: 20px;
+  padding: 5px;
+  border:2px solid red;
+}
+#myDiv{
+  color:red;
+  text-align:center;
+}
+
+.myDivs{
+  font-weight:bold;
+  font-style:italic;
+}</pre>
+      <p>which will produce this output</p>
+      <div id="myDiv" class="myDivs">myDiv</div>
+      <p>All <code>div</code> elements on the page will have a margin of 20 pixels, 5 pixel padding, and a 2 pixel red border. All <code>div</code> elements on the page with a class of <code>myDivs</code> will be bold and italic. Only the element with an id of <code>myDiv</code> will have red centered text.</p>
+      </article>
+
+      <article id="advanced-selectors">
+        <h3>Advanced Selectors and techniques</h3>
+        <p>When declaring styles, it can save you quite a bit of headache by being as specific as possible in your declaration. Lets take the following structure for example.</p>
+<pre>&lt;div id=&quot;container&quot;&gt;
+  &lt;div class=&quot;inner&quot;&gt;
+    &lt;table class=&quot;table&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Header 1&lt;/th&gt;
+          &lt;th&gt;Header 2&lt;/th&gt;
+          &lt;th&gt;Header 3&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <p>If you want to apply a 1 pixel black border to the <code>th</code> elements, you could include.</p>
+<pre>th{
+  border:1px solid black;
+}</pre>
+        <p>However, if you include another table on your page, all <code>&lt;th&gt;</code> tags will automatically inherit this border, whether you want it to or not. This is where specificity comes in handy, and why it is generally best practice to be as specific in your style declarations as possible. You can chain selectors by including spaces between them as follows. This will apply the style only to elements falling under the exact structure shown above, and to nothing else. Basically moving down the chain from the outermost element to the exact element that we want styled.</p>
+<pre>
+  #container .inner .table thead tr th{
+  border:1px solid black;
+}
+</pre>
+        <p>By including spaces in between, you are traversing from the parent to the sibling. However, not including spaces in between allows you to specifically narrow down elements. Let's say you wanted to target specifically an element that has an id of container and the border and red class added to it. Here is how you would do it <code>#container.border.red</code>. You can also select specific elements by class name. For example, you may have a success class which applies the color green to the element. But, what if you want a success <code>&lt;div&gt;</code> to look different than a success <code>&gt;p&lt;</code>, say for instance have a green border and some padding. You could use different class names for each, or, you can simplify your life and apply the same class to both, but change them from your stylesheet. Let's take a look.</p>
+<pre>.success{
+  color:green;
+}
+div.success{
+  padding:10px;
+  border:1px solid green;
+}</pre>
+        <div class="successDemo"> Success Div</div>
+        <p class="successDemo">Success paragraph</p>
+          
+        <p>Notice how they are both green, as they both inherited from the <code>success</code> class, but only the <code>&lt;div&gt;</code> had the border and the padding. By adding that extra level of specificity, we are able to use the same class name, but apply different styles based on the element. You can get pretty complex with your selector usage, and I recommend it. It will give you so much more control, and is well worth the learning curve.</p>
+
+        <h5>You want more?</h5>
+        <p>You also have the option of using <a href="http://www.w3schools.com/css/css_pseudo_classes.asp">pseudo selectors</a>. These are a little more advanced and there are quite a few of them, but here is a handful: <code>:hover</code>, <code>:visited</code>, <code>:first-child</code>, <code>:last-child</code> selectors. These are most commonly used on lists and tables. Lets take an example. You want to have a list of elements with borders on the bottom, but you don't want the last one to have a border. You could add a class to it, or even easier, just use the <code>last-child</code> selector.</p>
+<pre>.listDemo li{
+  border-bottom:1px solid black;
+}
+.listDemo li:last-child{
+  border-bottom:none;
+}</pre>
+        <ul class="listDemo">
+          <li>List 1</li>
+          <li>List 2</li>
+          <li>List 3</li>
+          <li>List 4</li>
+        </ul>
+        <br>
+        <p>There are also a bunch of fancy selectors that you can and should use when creating your stylesheets that add an extra level of control to you as a designer, and who doesn't love control. <a href="http://designshack.net/articles/css/css-selectors-just-the-tricky-bits/">Here</a> is a great article that goes into some detail about parent to sibling selectors</p>
+      </article>
+
+      <br/><br/><br/>
+      <a href="#/css/floats" class="btn btn-success pull-right">NEXT</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="span12">
+    <div id="content">
+      <h1>Layout</h1>
+
+      <hr>
+      <article id="display">
+        <h3>Display Types</h3>
+        <p>The display property of an element is probably one of the most important. It allows you to take an existing element, and modify the way it appears on the page. As you saw before, the <code>&lt;div&gt;</code> element generally has a full width and breaks the page layout. If you wanted it to behave more like a <code>&lt;p&gt;</code> tag you could assign the <code>inline</code> display style to it. There are a few different common display types you can use when styling your pages. In order to declare a display type for an element, you must target that element using a CSS selector and assign its <code>display</code> type.</p>
+<pre>[selector]{
+  display: [type]
+}</pre>
+        <p>More on display types can be found <a href="http://www.w3schools.com/cssref/pr_class_display.asp">here</a>. It is important to learn these, because they are probably one of the most used properties you will apply to elements to provide the structure for your page. You can completely change the way an element behaves by modifying its display property.</p>
+      </article>
+      <article id="floats">
+        <h3>Floats</h3>
+        <p>One of the other more important properties for providing structure to your page are floats. Although simple in design, implementation of floats can be quite tricky. Basically, floats remove an element from the flow of the page, and "float" them to the right or to the left. Floats are used often when designing web pages. Menus, picture galleries, even page structures are usually designed around floats. This is the primary concept behind tableless web design. Let's create a really simple 3 column webpage design using floats.</p>
+
+        <div>
+          <div style="height:50px;background:green;color:white;">Header</div>
+          <div class="cf">
+            <div class="pull-left" style="width:33.33%;height:200px;background:red;color:white;">Left Column (Floated Left)</div>
+            <div class="pull-left" style="width:33.33%;height:200px;background:blue;color:white;">Middle Column (Floated Left)</div>
+            <div class="pull-right" style="width:33.33%;height:200px;background:pink;color:white;">Right Column (Floated Right)</div>
+          </div>
+          <div style="height:50px;background:orange;color:white;">Footer</div>
+        </div>
+
+        <br/><br/>
+        <div class="alert alert-info">Gotcha: Since floats are removed from the flow of the layout, if they are contained within another element, they can and will extend beyond that element if the non floated content within is not taller than the floated element(s). Take the following for example. What you may want is a red box floated to the right of the blue box, but you want it to be fully contained within the blue box. I am using this technique in the example above for the three floated columns.</div>
+
+        <div style="background:blue; color:white;">Container<div class="pull-right padding-5" style="height:60px;background:red; color:white;">Float right</div></div>
+
+        <br><br><br>
+        <p>There a few ways to fix this, but one of the easiest, and most acceptable ways is to use a <a href="http://nicolasgallagher.com/micro-clearfix-hack/">clearfix</a>. To use this particular fix, you just apply the <code>cf</code> class to an element and it will basically clear all "floats" from it, forcing it to contain all of its children. Here is the same example as above but with the <code>cf</code> class applied to it.</p>
+
+        <div class="cf" style="background:blue; color:white;">Container<div class="pull-right padding-5" style="height:60px;background:red; color:white;">Float right</div></div>
+
+      </article>
+
+      <article id="margins-padding">
+        <h3>Margins and Padding</h3>
+        <p>Margins and padding are very common CSS properties. Margins add spacing around the outside of an element, while padding provides spacing to the inside of an element. The following is a mockup of the box model of an HTML element taken from <a href="http://www.w3schools.com/css/css_boxmodel.asp">w3scools.com</a>.</p>
+
+        <img src="http://www.w3schools.com/css/box-model.gif" alt="">
+        <br><br>
+
+        <div class="alert alert-info">Gotcha : When using padding with an element with a declared with, the margins and padding are added to the width of the element when it gets rendered. Lets say you had a case where you needed an element that is exactly 1000 pixels wide, for example it needs to fit inside a 1000px container. If you declared a 1000 pixel width to the element, and added a margin, padding, or border, the element would expand beyond the bounds of its container. Take the following for example. I have added a width of 100% to it, and a padding of 5 pixels around all of the edges for both elements</div>
+
+        <div style="background:blue;width:500px;color:white;">
+          container 
+          <div style="background:red;width:500px;padding:5px;color:white;">inner (5px padding)</div>
+        </div>
+        <p>Simply leaving out the width declaration on this element would fix this problem, as the <code>div</code> element will already expand to fit its container, but if you ever do need to declare a static width to an element, you must account for margins/paddings/borders. There is a property on modern browsers (IE8+) called <code>box-sizing</code> which allows you to specify how margins/paddings should be measured, and whether they should be included as an extension of the box model, or included within the box model. In order to use exclude padding when determining width, use the <code>box-sizing : border-box</code> declaration. Here is the same model as above but with <code>box-sizing: border-box</code></p>
+
+        <div style="background:blue;width:500px;color:white;box-sizing:border-box">
+          container
+          <div style="background:red;width:500px;padding:5px;color:white;box-sizing:border-box">inner (5px padding)</div>
+        </div>
+        <p>I find this technique so handy that I almost always include this propery in my documents. It makes calculations much easier, and simplifies life immensely once you start working with fluid designs which make use of percentage based widths as opposed to pixel based. Include this at the top of your CSS file and it will apply the <code>border-box</code> declaration to all elements on your page.</p>
+<pre>*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }</pre>
+
+      </article>
+
+      <article id="frameworks">
+        <h3>Frameworks</h3>
+        <p>As you can imagine, there is quite a bit of code that can go into just creating a structure for you page. This is where CSS frameworks or grid systems come in handy. <a href="http://mashable.com/2013/04/26/css-boilerplates-frameworks/">Here</a> is a list of 20 of the more popular frameworks out there, although I must say my two favorites are <a href="http://foundation.zurb.com/">Foundation</a> and <a href="http://getbootstrap.com/">Bootstrap</a>. These provide much more than a simple grid structure for page layouts, they also provide you with a boilerplate for styles including typography, form elements, and a bunch of handy widget elements. I am currently using Bootstrap for the design of this site, and I have literally only declared a dozen or so styles, the rest is all handled by bootstrap. Foundation probably offers the best and most advanced grid system, although it is not entirely cross browser compatible, and will fail miserably on older browsers as it makes extensive use of the <code>box-sizing</code> property.</p>
+      </article>
+
+      <br/><br/><br/>
+      <a href="#/css/basics" class="btn btn-danger pull-left">BACK</a>
+      <a href="#/css/transitions" class="btn btn-success pull-right">NEXT</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

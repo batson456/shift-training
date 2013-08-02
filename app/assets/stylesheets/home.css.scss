@@ -48,3 +48,100 @@ body {
 .padding-5{
     padding:5px;
 }
+.myDiv{
+    border:6px solid blue;
+    background:pink;
+    width:20%;
+    margin:0 auto 20px;
+    padding:20px;
+    text-align:center;
+    color:red;
+    border-radius:20px;
+    box-shadow:0 0 10px #000;
+}
+#myDiv{
+  margin: 20px;
+  padding: 5px;
+  border:2px solid red;
+  color:red;
+}
+
+.myDivs{
+  font-weight:bold;
+  font-style:italic;
+  text-align:center;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.successDemo{
+    color:green;
+}
+div.successDemo{
+    padding:10px;
+    border:1px solid green;
+}
+.listDemo{
+    li{
+        border-bottom:1px solid black;
+    }
+    li:last-child{
+        border-bottom:none;
+    }
+}
+.expand-width{
+  width:150px;
+  background:green;
+  color:white;
+  /* Firefox */
+  -moz-transition: all 1s ease;
+  /* WebKit */
+  -webkit-transition: all 1s ease;
+  /* Opera */
+  -o-transition: all 1s ease;
+  /* Standard */
+  transition: all 1s ease;
+}
+.expand-width:hover{
+  width:250px;
+  opacity:.7;
+  color:blue;
+  padding:20px;
+  /* Firefox */
+  -moz-transform: scale(2) rotate(30deg) translate(50px);
+  -moz--border-radius: 5px;
+  /* WebKit */
+  -webkit-transform: scale(1.2) rotate(30deg) translate(50px);
+  -webkit-border-radius: 5px;
+  /* Opera */
+  -o-transform: scale(2) rotate(30deg) translate(50px);
+  -o-border-radius: 5px;
+  /* Standard */
+  transform: scale(2) rotate(30deg) translate(50px);
+  border-radius: 5px;
+}

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="span12">
+    <div id="content">
+      <h1>CSS3 Transitions</h1>
+
+      <hr>
+      
+      <article id="transitions">
+        <h3>Speed Round</h3>
+        <p>I am not going to go into too much depth on CSS transitions, but you should definitely know they exist. They are quicker and easier to implement than Javascript transitions, and are incredibly powerful. However, the most commonly used transitions, hover transitions, although cool, don't provide much on modern touchscreen devices where the hover event is not captured by mobile browsers. In order to apply transitions to elements, you must first declare the type of transition the element should have, and then you use a pseudo selector to create the after effect. Here is an example. Basically, any propery that changes on the hover effect will have the transition applied to it.</p>
+<pre>.expand-width{
+  width:150px;
+  background:green;
+  color:white;
+  /* Firefox */
+  -moz-transition: all 1s ease;
+  /* WebKit */
+  -webkit-transition: all 1s ease;
+  /* Opera */
+  -o-transition: all 1s ease;
+  /* Standard */
+  transition: all 1s ease;
+}
+.expand-width:hover{
+  width:250px;
+  opacity:.7;
+  color:blue;
+  padding:20px;
+  /* Firefox */
+  -moz-transform: scale(2) rotate(30deg) translate(50px);
+  -moz--border-radius: 5px;
+  /* WebKit */
+  -webkit-transform: scale(1.2) rotate(30deg) translate(50px);
+  -webkit-border-radius: 5px;
+  /* Opera */
+  -o-transform: scale(2) rotate(30deg) translate(50px);
+  -o-border-radius: 5px;
+  /* Standard */
+  transform: scale(2) rotate(30deg) translate(50px);
+  border-radius: 5px;
+}</pre>
+      <div class="expand-width">Hover Over Me!</div>
+      <br>
+      <p>This may also be the first time you have seen the whole <code>-moz</code> thingy. These are used for a lot of CSS3 properties to help with cross browser compatibility. Again, this is a best practice thing, and a good thing to get into the habit of. Using <code>transform</code> with work in most cases, but in order to reach the largest audience, it is important to include declarations specific for all browsers. You can find more about transitions <a href="http://www.w3schools.com/css3/css3_transitions.asp">here</a>. Again, these are very cool, and can really spice up a boring site, but keep in mind that you may be spending a lot of time and effort creating a really cool animation that as many 20% of your viewers (mobile) may not be able to experience. If taht 80% is worth it, by all means, go crazy! Otherwise, your time and money can probably be better spent doing something else like ditching that rainbow colored background.</p>
+      </article>
+
+      <br/><br/><br/>
+      <a href="#/css/floats" class="btn btn-danger pull-left">BACK</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
