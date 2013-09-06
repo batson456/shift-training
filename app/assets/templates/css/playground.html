@@ -1,0 +1,199 @@
+<div class="row">
+	<div class="span12">
+		<div id="content">
+			<h1>CSS Playground</h1>
+			<h3>Floats</h3>
+			<div class="clearfix bordered">
+				<toggle-multiple
+					toggle="floatClasses"
+					border="false">
+					
+					<div class="bordered inner" style="width:20%;height:60px;">Inner Div</div>
+					<div class="bordered inner" style="width:20%;height:40px;">Inner Div</div>
+				
+				</toggle-multiple>
+			</div>
+			<br/><br/>
+			<h4>Clearfix</h4>
+			<p>Items within a div when given floats are removed from the element's box model, which means that although they are within the box, the box does not really recognize them and will not expand to fit. You must apply some sort of clearfix in order to make the box stretch to contain all floated elements. More details can be found <a href="http://nicolasgallagher.com/micro-clearfix-hack/">here</a>.</p>
+			<toggle-single 
+				toggle="clearfix" 
+				border="true" 
+				toggled="false">
+
+					<div class="pull-left bordered" style="width:20%;height:60px;">Left Floated</div>
+					<div class="pull-left bordered" style="width:20%;height:40px;">Left Floated</div>
+
+			</toggle-single>
+
+			<div class="clearfix"></div>
+			<h4>CSS</h4>
+			<pre>.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}</pre>
+
+		</div>
+	</div>
+</div>
+
+
+<hr>
+
+<div class="row">
+	<div class="span12">
+		<div id="content">
+			<h3>Box Sizing</h3>
+			<p>When using divs with a declared width, applying margins or padding to any of the child elements can throw off your layout. In order to fix this, you must do the math to consider the the box model with all margins, borders, paddings, and child elements widths included, or use the <code>box-sizing</code> property. The CSS below applies <code>box-sizing:border-box</code> to all elements in the DOM. More info <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">here</a>.</p>
+			<toggle-single 
+				toggle="box-model" 
+				border="false" 
+				toggled="false">
+
+				<div style="width:100%;" class="bordered">
+					<div style="width:100%;padding:20px;background:#ccc" class="bordered">
+					  padding:20px;
+					</div>
+				</div>
+
+			</toggle-single>
+
+			<h4>CSS</h4>
+			<pre>*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}</pre>
+			<div class="alert-info" style="padding:10px;">Note : the <code>box-sizing:border-box</code> property is only available in IE8+</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="span12">
+		<div id="content">
+			<h3>Display Types</h3>
+			<p>There are many different display types you can choose from when creating elements. With these display types you can make any element appear like an element of a completely different type. More info and options <a href="http://www.w3schools.com/cssref/pr_class_display.asp">here</a>.</p>
+			<toggle-multiple 
+				toggle="displayArray" 
+				border="true" 
+				toggled="false">
+
+				<div class="inner bordered" style="padding:5px">
+					Div 1
+				</div>
+
+				<div class="inner bordered" style="padding:5px">
+					Div 2
+				</div>
+				<div class="inner bordered" style="padding:5px">
+					Div 3
+				</div>
+
+			</toggle-multiple>
+
+			<h4>CSS</h4>
+			<code>display:block;</code> behaves like a building block, full width and contains boxlike properties
+			<br>
+			<code>display:inline;</code> behaves like text, it is displayed inline and loses its boxlike properties like a <code>span</code> tag
+			<br>
+			<code>display:inline-block;</code> is a hybrid between both block and inline display types. It is displaying inline with text, but maintains boxike properties
+			<br>
+			<code>display:none;</code> is exactly what you would expect, it removes the elemet from the view, although it still exists and the display type can be modified to make it show again
+
+			<h4>Tricks</h4>
+			<p>The display type is probably one of the most useful and manipulated CSS properties. You can turn a link into a button</p>
+
+			<toggle-single toggle="btn btn-success btn-small" border="false" inner="true">
+				<a href="#" class="inner">This is a link</a>
+			</toggle-single>
+
+			<p>An unordered list into a photogallery</p>
+			<toggle-single toggle="thumbnails" border="false" inner="true">
+				<ul>
+					<li>
+						<img src="http://lorempixel.com/350/150/sports">
+					</li>
+					<li>
+						<img src="http://lorempixel.com/350/150/abstract">
+					</li>
+					<li>
+						<img src="http://lorempixel.com/350/150/business">
+					</li>
+				</ul>
+			</toggle-single>
+
+			<p>or a tab bar (not clickable)</p>
+			<toggle-single toggle="nav nav-tabs" border="false" inner="true">
+				<ul>
+				  <li class="active">
+				    <a>Tab 1</a>
+				  </li>
+				  <li><a>Tab 2</a></li>
+				  <li><a>Tab 3</a></li>
+				</ul>
+			</toggle-single>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="span12">
+		<div id="content">
+			<h3>Positioning</h3>	
+			<toggle-multiple toggle="positionArray"
+				border="true"
+				inner="true">
+
+				<div class="bordered" style="padding:10px;">Container</div>
+
+			</toggle-multiple>
+
+			<h4>CSS</h4>
+			<code>position:relative</code> positioned relative to its spot in the DOM. Remains inline, but can be adjusted using top,bottom,right,left CSS properties based on its initial position in the DOM.
+			<br>
+			<code>position:absolute</code> is removed from the current page flow and is positioned absoltely to its nearest relatively positioned parent or the document, whichever comes first. 
+			<br>
+			<code>position:fixed</code> behaves like <code>position:absolute</code> in that is removed from the page flow, but is fixed to the viewport and will always remain in the same position.
+			<br>
+			<code>position:static</code> is the default. It appears to operate like <code>position:relative</code> but can not be moved using top,bottom,left,right CSS properties, and won't be figured when determining absolute positioning of its children.
+
+			<br>
+			
+			<h3>Parent Child posititioning</h3>
+			<toggle-single toggle="position-relative"
+				border="true"
+				toggled="true">
+
+				<div class="bordered" style="padding:10px;position:absolute;bottom:0;left:0;">Container (position:absolute)</div>
+
+			</toggle-single>
+			<h4>Broken</h4>
+			<pre>&lt;div&gt;
+	&lt;div style=&quot;position:absolute;bottom:0;left:0;&quot;&gt;&lt;/div&gt;		
+&lt;/div&gt;</pre>
+
+			<h4>Fixed</h4>
+			<pre>&lt;div style=&quot;position:relative;&quot;&gt;
+	&lt;div style=&quot;position:absolute;bottom:0;left:0;&quot;&gt;&lt;/div&gt;		
+&lt;/div&gt;</pre>
+		</div>
+	</div>
+</div>

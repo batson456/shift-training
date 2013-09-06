@@ -6,6 +6,7 @@
 html, body {
   margin: 20px;
   padding-top:20px;
+  height:100%;
 }
 
 body {
@@ -144,4 +145,74 @@ div.successDemo{
   /* Standard */
   transform: scale(2) rotate(30deg) translate(50px);
   border-radius: 5px;
+}
+
+.bordered{
+  border:1px solid black;
+}
+
+.box-model *, .box-model{
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.block div.inner{
+  display:block;
+}
+
+.inline div.inner{
+  display: inline;
+}
+
+.inline-block div.inner{
+  display:inline-block;
+}
+
+.none div.inner{
+  display:none;
+}
+.list-item div.inner{
+  display: list-item;
+}
+
+.table div.inner{
+  display:table;
+}
+
+.position-absolute{
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.position-relative{
+  position:relative;
+  top:0;
+  left:0;
+}
+
+.position-relative .inner{
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.position-fixed{
+  position: fixed;
+  top:0;
+  left:0;
+}
+.position-static{
+  position:static;
+}
+
+.float-none div.inner{
+  float:none;
+}
+
+.float-left div.inner{
+  float:left;
+}
+
+.float-right div.inner{
+  float:right;
 }

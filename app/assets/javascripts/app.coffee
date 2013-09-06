@@ -10,4 +10,5 @@
       .when('/css/floats', {templateUrl : '/assets/css/floats.html'})
       .when('/css/transitions', {templateUrl : '/assets/css/transitions.html'})
       .when('/css/responsive', {templateUrl : '/assets/css/responsive.html'})
+      .when('/css/playground', {templateUrl : '/assets/css/playground.html', controller : 'mainCtrl'})
       .otherwise({redirectTo: '/'})
